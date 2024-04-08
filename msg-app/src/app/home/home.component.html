@@ -1,0 +1,60 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" ><h1>Welcome {{this.name }}</h1></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item active">
+        <a class="nav-link" (click)="linkTo(this.name)" >Messages <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="">Log out</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+<br>
+<div class="container">
+  <div class="row">
+<div class="col-7 mt-2">
+  <div id="form">
+    <div class="form-group row">
+      <label for="inputEmail3" class="col-sm-2 col-form-label">Owner</label>
+      <div class="col-sm-10">
+        <input type="name" class="form-control" readonly [(ngModel)]='Owner' id="inputEmail3"  value="{{this.name }}" placeholder="{{this.name }}">
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="exampleFormControlSelect1" class="col-sm-2 col-form-label">Receiver</label>
+      <div class="col-sm-10">
+      <select class="form-control mt-2" [(ngModel)]='Receiver'  id="exampleFormControlSelect1">
+      <option>choose...</option>
+        <option *ngFor="let item of users" >{{item.name }}</option>
+      </select>
+    </div>
+    </div>
+    <div class="form-group row">
+      <label for="inputEmail3" class="col-sm-2 col-form-label">Subject</label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control" [(ngModel)]='Subject' id="inputEmail3" placeholder="Subject">
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="exampleFormControlTextarea1" class="col-sm-1 ml-1 col-form-label">Message</label>
+      <div class="col-sm-10">
+      <textarea class="form-control ml-5" [(ngModel)]='Message' id="exampleFormControlTextarea1" rows="8"></textarea>
+    </div>
+    </div>
+    <div class="form-group row">
+      <div class="col-sm-10">
+        <button type="button" class="btn btn-primary"(click)="SendFN()">Send</button>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="col-5">
+  <h1>Thank you</h1>
+</div>
+  </div>
+</div>

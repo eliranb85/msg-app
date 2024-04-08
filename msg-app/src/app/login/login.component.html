@@ -1,0 +1,40 @@
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <h1>Welcome to mail management</h1>
+    </div>
+    </div>
+  <br>
+
+      <div class="form-group mt-5">
+        <label for="exampleInputEmail1">User name</label>
+        <input type="text" class="form-control" [(ngModel)]="name" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder=" your User name">
+              </div>
+      <button type="button" class="btn btn-warning" (click)="ConectFn(name)">Conect</button>
+
+    <br>
+    <br>
+    <div class="border ">
+      <div class="row">
+      <div class="col-2 mt-1">
+        <label class="switch"><input type="checkbox"(click)="visibleAddUser()" ><span class="slider round"></span>  </label>
+      </div>
+
+      <div class="col-2">
+        <h3><strong>Add user</strong></h3>
+      </div>
+      </div>
+  </div>
+
+  <div class="panel">
+    <br>
+    <div *ngIf="showAddUser" > <div class="form">
+
+      <label for="exampleInputEmail1">New User name</label>
+      <input type="email" class="form-control" [(ngModel)]="newname" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder=" your User name">
+            </div>
+            <br>
+    <button type="button" class="btn btn-success" (click)="AddUserFn()">Add</button></div>
+</div>
+
+
